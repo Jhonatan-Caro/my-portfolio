@@ -1,6 +1,6 @@
 export const profile = {
   name: "Jhonatan Caro Suárez",
-  role: "Desarrollador full stack enfocado en datos e inteligencia artificial",
+  role: "Desarrollador full stack | Big Data e inteligencia artificial",
   location: "España",
   email: "jhonatancaro258@gmail.com",
   github: "https://github.com/Jhonatan-Caro",
@@ -177,7 +177,11 @@ export const skills = [
   },
   {
     label: "Frontend",
-    items: ["React", "Vue.js", "Tailwind CSS"],
+    items: ["React", "Vue.js", "Tailwind CSS", "Next.js"],
+  },
+  {
+    label: "Cloud",
+    items: ["AWS", "Cloudflare"],
   },
   {
     label: "Analítica web",
@@ -185,10 +189,6 @@ export const skills = [
   },
   {
     label: "Herramientas",
-    items: ["Docker", "Docker Compose", "Git", "GitHub", "AWS", "WordPress", "Figma"],
-  },
-  {
-    label: "Idiomas",
-    items: ["Español (nativo)", "Inglés (medio)"],
+    items: ["Docker", "Docker Compose", "Git", "GitHub", "WordPress", "Figma"],
   },
 ];

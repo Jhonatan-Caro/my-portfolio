@@ -16,13 +16,11 @@ export function Sidebar() {
       id="inicio"
       className="relative flex scroll-mt-16 flex-col justify-between overflow-hidden px-6 pt-16 pb-10 sm:px-10 lg:sticky lg:top-0 lg:h-screen lg:w-[45%] lg:pt-24 lg:pb-16"
     >
-      {/* Glow cálido del panel, único color ambiental de la página */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_40%_35%,#221607_0%,transparent_70%)]"
       />
       <div className="relative">
-        {/* Bloque de foto: sustituye el archivo en public/images para cambiarla */}
         <Image
           src={profile.photo}
           alt={`Retrato de ${profile.name}`}
