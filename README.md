@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Jhonatan Caro Suárez
 
-## Getting Started
+Portfolio personal de una sola página construido con Next.js 16 (App Router), React 19 y Tailwind CSS v4.
 
-First, run the development server:
+## Desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` — layout raíz (fuentes Fraunces e Instrument Sans, metadatos) y página principal.
+- `components/sections/` — secciones de la página: hero, experiencia, proyectos, formación, competencias y contacto.
+- `components/ui/` — piezas reutilizables: navegación por secciones con scroll-spy, barra flotante inferior, botones, chips y tags de categoría, estado de disponibilidad con reloj, enlaces e iconos SVG (`icons.tsx` incluye una plantilla comentada para añadir iconos nuevos).
+- `lib/content.ts` — todo el contenido del portfolio en un solo archivo; edita aquí los textos.
+- `public/CV-Jhonatan-Caro-Datos-IA.pdf` — CV descargable (copia del original en `document/`).
 
-## Learn More
+## Build y despliegue
 
-To learn more about Next.js, take a look at the following resources:
+El proyecto se exporta como sitio estático (`output: 'export'`) pensado para servirse desde S3 o cualquier hosting estático:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El resultado queda en `out/`.

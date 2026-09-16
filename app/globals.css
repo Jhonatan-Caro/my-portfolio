@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Color */
+  --color-base:     #0A0A0A; /* fondo de página */
+  --color-raised:   #141414; /* tarjetas, barra flotante */
+  --color-chip:     #1A1A1A; /* fondo de chips */
+  --color-hairline: #262626; /* bordes de 1px */
+  --color-ink:      #EDEDED; /* texto principal */
+  --color-muted:    #9C9C9C; /* texto secundario */
+  --color-accent:   #E28B3B; /* ámbar cálido: CTA, estado activo */
+  --color-positive: #4ADE80; /* punto de disponibilidad */
+
+  /* Puntos de categoría en tags de proyectos */
+  --color-cat-frontend: #4ADE80;
+  --color-cat-backend:  #F87171;
+  --color-cat-ai:       #C084FC;
+  --color-cat-data:     #60A5FA;
+
+  /* Tipografía */
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --text-display:               clamp(2.25rem, 4.5vw, 3.25rem);
+  --text-display--line-height:  1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h3:                    1.125rem;
+  --text-h3--line-height:       1.4;
+  --text-body:                  0.9375rem;
+  --text-body--line-height:     1.65;
+  --text-small:                 0.8125rem;
+  --text-small--line-height:    1.6;
+  --text-label:                 0.6875rem;
+  --text-label--line-height:    1.4;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-hairline);
+  }
 }
